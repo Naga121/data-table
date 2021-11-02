@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { Employee } from 'src/app/Models/employee.model';
+import { DelectService } from 'src/app/Service/delect.service';
 import { EmployeeService } from 'src/app/Service/employee.service';
 
 @Component({
@@ -17,15 +18,16 @@ export class EmployeeComponent implements OnInit {
   postData: boolean;
   upDate: boolean;
 
-  empData: any;
-  confirm: any
+  empData:any;
+  
+  employeeModel:Employee =new  Employee();
 
-  search: any;
+  search: string;
   p: number = 1;
 
-  employeeModel: Employee = new Employee();
+  
 
-  constructor(public es: EmployeeService, private fb: FormBuilder, private toastr: ToastrService) { }
+  constructor(public es: EmployeeService, private fb: FormBuilder, private toastr: ToastrService,private ds:DelectService) { }
 
   ngOnInit(): void {
     this.form = this.fb.group({
@@ -81,15 +83,23 @@ export class EmployeeComponent implements OnInit {
   }
 
   deleteEmp(obj: any) {
-    this.confirm = confirm(`Do you want to delete`);
-    if (this.confirm == true) {
-      this.es.deletData(obj.id).subscribe(
-        () => {
+    // this.confirm = confirm(`Do you want to delete`);
+    // if (this.confirm == true) {
+    //   this.es.deletData(obj.id).subscribe(
+    //     () => {
+    //       this.getEmpData();
+    //       this.toastr.success('Your data is deleted', 'Delete')
+    //     }
+    //   )
+    // }
+    this.ds.openConfirmDialog('Do you want to delete').afterClosed().subscribe(res=>{
+      if(res== true){
+        this.es.deletData(obj.id).subscribe( () => {
           this.getEmpData();
           this.toastr.success('Your data is deleted', 'Delete')
-        }
-      )
-    }
+        })
+      }
+    });
   }
 
   editEmp(obj: any) {
@@ -119,7 +129,7 @@ export class EmployeeComponent implements OnInit {
 
     this.submitted = true;
 
-    this.es.putData(this.employeeModel, this.employeeModel.id).subscribe(
+    this.es.putData(this.employeeModel,this.employeeModel.id).subscribe(
       () => {
         this.form.reset();
         let ref = document.getElementById('cancle')

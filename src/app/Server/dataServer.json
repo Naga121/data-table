@@ -1,0 +1,54 @@
+{
+  "Employee": [
+    {
+      "id": 2,
+      "eName": "Raju",
+      "email": "nagaraju@gmail.com",
+      "mobile": "6789012345",
+      "gender": "Female",
+      "role": "Testing",
+      "skill": "Selenium",
+      "expYear": "1.5"
+    },
+    {
+      "id": 3,
+      "eName": "Nagaraju",
+      "email": "nagaraju@gmail.com",
+      "mobile": "9012345678",
+      "gender": "Male",
+      "role": "Testing",
+      "skill": "Unit Test",
+      "expYear": "2.5"
+    },
+    {
+      "id": 4,
+      "eName": "adi",
+      "email": "adi@gmali.com",
+      "mobile": "6546556455",
+      "gender": "Male",
+      "role": "Developer",
+      "skill": "Java,JDBC",
+      "expYear": "3.1"
+    },
+    {
+      "eName": "paven",
+      "email": "paven@gmail.com",
+      "mobile": "9724451521",
+      "gender": "Male",
+      "role": "Cloud Devep",
+      "skill": "Devps",
+      "expYear": "2.5",
+      "id": 5
+    },
+    {
+      "eName": "lokesh",
+      "email": "lokesh@gmail.com",
+      "mobile": "9874561230",
+      "gender": "Male",
+      "role": "UI  Developer",
+      "skill": "Angular,React",
+      "expYear": "1.0",
+      "id": 6
+    }
+  ]
+}
