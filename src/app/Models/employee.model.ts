@@ -1,5 +1,5 @@
 export class Employee{
-    id:number | undefined;
+    id:number;
     eName: string;
     email: string
     mobile: string;

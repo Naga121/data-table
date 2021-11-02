@@ -78,7 +78,7 @@ export class EmployeeComponent implements OnInit {
 
   getEmpData() {
     this.es.getData().subscribe(
-      (res) => { this.empData = res }
+      (res) => {  this.empData = res }
     )
   }
 
