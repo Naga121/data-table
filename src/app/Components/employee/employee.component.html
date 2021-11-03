@@ -2,72 +2,94 @@
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-                <p class="modal-title text-center text-danger h4 mt-3" id="exampleModalLabel">Employee Form</p>
-                <!-- <button type="button" class="btn-close d-flex" data-bs-dismiss="modal" aria-label="Close"></button> -->
+            <p class="modal-title text-center text-danger h4 mt-3" id="exampleModalLabel">Employee Form</p>
+            <!-- <button type="button" class="btn-close d-flex" data-bs-dismiss="modal" aria-label="Close"></button> -->
             <div class="modal-body">
                 <form class="normall-form" [formGroup]="form" (ngSubmit)="postEmpData()">
                     <div class="row">
                         <div class="col-sm-6">
-                            <label for="Name" class="form-label h6">Name </label> <span class="text-danger mx-2">*</span>
+                            <label for="Name" class="form-label h6">Name </label> <span
+                                class="text-danger mx-2">*</span>
                             <input type="text" class="form-control" placeholder="Your Name" formControlName="eName">
                             <span class="text-danger"
-                            *ngIf="(formControl.eName.touched || submitted) && formControl.eName.errors?.required">Name
-                            is Required*</span>
+                                *ngIf="(formControl.eName.touched || submitted) && formControl.eName.errors?.required">Name
+                                is Required*</span>
                         </div>
                         <div class="col-sm-6">
-                            <label for="Email" class="form-label h6">Email</label> <span class="text-danger mx-2">*</span>
-                            <input type="email" class="form-control" placeholder="abcd@gmail.com" formControlName="email">
+                            <label for="Email" class="form-label h6">Email</label> <span
+                                class="text-danger mx-2">*</span>
+                            <input type="email" class="form-control" placeholder="abcd@gmail.com"
+                                formControlName="email">
                             <span class="text-danger"
-                            *ngIf="(formControl.email.touched || submitted) && formControl.email.errors?.required">Email
-                            is Required*</span>
-                            <span class="text-danger" *ngIf=" formControl.email.errors?.email">Must @gmail.com Required*</span>
+                                *ngIf="(formControl.email.touched || submitted) && formControl.email.errors?.required">Email
+                                is Required*</span>
+                            <span class="text-danger" *ngIf=" formControl.email.errors?.email">Must @gmail.com
+                                Required*</span>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-sm-6">
-                            <label for="Mobile" class="form-label h6">Mobile</label> <span class="text-danger mx-2">*</span>
+                            <label for="Mobile" class="form-label h6">Mobile</label> <span
+                                class="text-danger mx-2">*</span>
                             <input type="text" class="form-control" placeholder="98765..." formControlName="mobile">
                             <span class="text-danger"
-                            *ngIf="(formControl.mobile.touched || submitted) && formControl.mobile.errors?.required">Mobile number
-                            is Required*</span>
-                            <span class="text-danger" *ngIf=" formControl.mobile.errors?.minlength">Must 10 letters Required*</span>
+                                *ngIf="(formControl.mobile.touched || submitted) && formControl.mobile.errors?.required">Mobile
+                                number
+                                is Required*</span>
+                            <span class="text-danger" *ngIf=" formControl.mobile.errors?.minlength">Must 10 letters
+                                Required*</span>
                         </div>
                         <div class="col-sm-6">
-                            <label for="genger" class="form-label h6">Gender</label>  <span class="text-danger mx-2">*</span>                        
+                            <label for="genger" class="form-label h6">Gender</label> <span
+                                class="text-danger mx-2">*</span>
                             <div class="mt-1">
                                 <mat-radio-group aria-label="Select an option" formControlName="gender">
                                     <mat-radio-button value="Male">Male</mat-radio-button>
                                     <mat-radio-button value="Female">Female</mat-radio-button>
                                 </mat-radio-group>
                             </div>
-                            <span class="text-danger"  *ngIf="(formControl.gender.touched || submitted) && formControl.gender.errors?.required">Select Gender * </span>
+                            <span class="text-danger"
+                                *ngIf="(formControl.gender.touched || submitted) && formControl.gender.errors?.required">Select
+                                Gender * </span>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-sm-6">
                             <label for="role" class="form-label h6">role</label> <span class="text-danger mx-2">*</span>
                             <input type="text" class="form-control" placeholder="Your Role" formControlName="role">
-                            <span class="text-danger"  *ngIf="(formControl.role.touched || submitted) && formControl.role.errors?.required">Ente Your Role </span>
+                            <span class="text-danger"
+                                *ngIf="(formControl.role.touched || submitted) && formControl.role.errors?.required">Ente
+                                Your Role </span>
                         </div>
                         <div class="col-sm-6">
-                            <label for="Exprince" class="form-label h6">Exprince  </label> <span class="text-danger mx-2">*</span>
-                            <input type="year" class="form-control mt-2" placeholder="Enter expYear" formControlName="expYear">
-                            <span class="text-danger"  *ngIf="(formControl.expYear.touched || submitted) && formControl.expYear.errors?.required">Enter Your Exprince </span>
+                            <label for="Exprince" class="form-label h6">Exprince </label> <span
+                                class="text-danger mx-2">*</span>
+                            <input type="year" class="form-control mt-2" placeholder="Enter expYear"
+                                formControlName="expYear">
+                            <span class="text-danger"
+                                *ngIf="(formControl.expYear.touched || submitted) && formControl.expYear.errors?.required">Enter
+                                Your Exprince </span>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-sm-12">
-                            <label for="skils" class="form-label h6"    >Skills</label> <span class="text-danger mx-2">*</span>
-                           <textarea class="form-control" placeholder="Add Your Skills " cols="100" rows="1" formControlName="skill"></textarea>
-                           <span class="text-danger"  *ngIf="(formControl.skill.touched || submitted) && formControl.skill.errors?.required">Enter At Lest one Skill </span>
+                            <label for="skils" class="form-label h6">Skills</label> <span
+                                class="text-danger mx-2">*</span>
+                            <textarea class="form-control" placeholder="Add Your Skills " cols="100" rows="1"
+                                formControlName="skill"></textarea>
+                            <span class="text-danger"
+                                *ngIf="(formControl.skill.touched || submitted) && formControl.skill.errors?.required">Enter
+                                At Lest one Skill </span>
                         </div>
                     </div>
                 </form>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-pale-red mx-2" data-bs-dismiss="modal" id="cancle">Close</button>
-                <button type="submit" class="btn btn-primary mx-2" *ngIf="postData" >PostData</button>
-                <button type="submit" class="btn btn-primary mx-2" (click)="upDateEmp()" *ngIf="upDate">UpDate</button>
+                <button type="submit" class="btn btn-primary mx-2" *ngIf="postDataButtion"
+                    data-bs-dismiss="modal">PostData</button>
+                <button type="submit" class="btn btn-primary mx-2" (click)="upDateEmp()" *ngIf="upDateButtion"
+                    data-bs-dismiss="modal">UpDate</button>
             </div>
         </div>
     </div>
@@ -78,13 +100,12 @@
 <div class="container mt-5">
     <div class="row">
         <div class="col-md-2">
-            <button mat-button mat-flat-button color="primary" (click)="clickEmp()" data-bs-toggle="modal"
-                data-bs-target="#exampleModal">Add
-                Row</button>
+            <button mat-button mat-flat-button color="primary" (click)="clickEmployee()" data-bs-toggle="modal"
+                data-bs-target="#exampleModal">Employee <mat-icon>person_add</mat-icon></button>
         </div>
-        <!-- <div class="col-md-10">
+        <div class="col-md-10">
             <input type="search" class="form-control" [(ngModel)]="search">
-        </div> -->
+        </div>
     </div>
     <div class="row">
         <div class="col-lg-12">
@@ -102,7 +123,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr class="text-center" *ngFor="let x of empData  | paginate: { itemsPerPage: 5, currentPage: p };
+                    <tr class="text-center" *ngFor="let x of employee  |filter:search |paginate: { itemsPerPage: 5, currentPage: p };
                     let i = index ">
                         <td>{{i+1}}</td>
                         <td>{{x.eName}}</td>
@@ -113,12 +134,11 @@
                         <td>{{x.skill}}</td>
                         <td>{{x.expYear}}</td>
                         <td>
-                            <button class="btn btn-info " type="button" (click)="editEmp(x)">
-                                <mat-icon>edit</mat-icon>
+                            <button class="btn btn-info btn-sm" data-bs-dismiss="modal" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal" (click)="editEmp(x)">
+                                <mat-icon> border_color </mat-icon>
                             </button>
-                        </td>
-                        <td>
-                            <button class="btn btn-danger" (click)="deleteEmp(x)">
+                            <button class="btn btn-danger mx-1" (click)="deleteEmp(x)">
                                 <mat-icon>delete</mat-icon>
                             </button>
                         </td>
@@ -132,4 +152,3 @@
         </div>
     </div>
 </div>
-

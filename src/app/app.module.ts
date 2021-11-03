@@ -11,14 +11,13 @@ import { EmployeeComponent } from './Components/employee/employee.component';
 import { NavbarComponent } from './Components/navbar/navbar.component';
 import { ToastrModule } from 'ngx-toastr';
 import { NgxPaginationModule } from 'ngx-pagination';
-import { ConformDeleteComponent } from './Components/employee/conform-delete/conform-delete.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 @NgModule({
   declarations: [
     AppComponent,
     EmployeeComponent,
     NavbarComponent,
-    ConformDeleteComponent
   ],
   imports: [
     BrowserModule,
@@ -30,10 +29,10 @@ import { ConformDeleteComponent } from './Components/employee/conform-delete/con
     AngmaterialModule,
     ToastrModule.forRoot(),
     NgxPaginationModule,
+    Ng2SearchPipeModule
     
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents:[ConformDeleteComponent]
 })
 export class AppModule { }
