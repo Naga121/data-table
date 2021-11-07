@@ -12,10 +12,10 @@ import { EmployeeService } from 'src/app/Service/employee.service';
 export class EmployeeComponent implements OnInit {
 
   public form: FormGroup;
+  public employee: Employee[] = [];
   public submitted: boolean = false;
   public postDataButtion: boolean;
   public upDateButtion: boolean;
-  public employee: Employee[] = [];
   public search: string;
   public p: number = 1;
   public employeeId: any;
@@ -25,7 +25,7 @@ export class EmployeeComponent implements OnInit {
   get formControl() {
     return this.form.controls;
   }
-
+  
   clickEmployee() {
     this.form.reset();
     this.postDataButtion = true;
@@ -40,7 +40,7 @@ export class EmployeeComponent implements OnInit {
       gender: ['', Validators.required],
       role: ['', Validators.required],
       skill: ['', Validators.required],
-      expYear: ['', Validators.required],
+      expYear: ['', Validators.required]
     });
     this.getEmpData();
   }

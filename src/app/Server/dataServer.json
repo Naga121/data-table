@@ -11,14 +11,14 @@
       "id": 2
     },
     {
-      "id": 3,
       "eName": "Nagaraju",
       "email": "nagaraju@gmail.com",
       "mobile": "9012345678",
       "gender": "Male",
       "role": "Testing",
       "skill": "Unit Test",
-      "expYear": "2.5"
+      "expYear": "2.1",
+      "id": 3
     },
     {
       "id": 4,
@@ -49,6 +49,40 @@
       "skill": "Angular,React",
       "expYear": "1.0",
       "id": 6
+    }
+  ],
+  "Signup": [
+    {
+      "fName": "thhr",
+      "lName": "dfsdfas",
+      "email": "sdfsafa",
+      "pwd": "fdfdfr",
+      "mobile": "efeerer",
+      "id": 1
+    },
+    {
+      "fName": "dsdsd",
+      "lName": "fffdd",
+      "email": "dfsfs",
+      "pwd": "esfsrf",
+      "mobile": "efrererewrw",
+      "id": 2
+    },
+    {
+      "fName": "dfd",
+      "lName": "dfdfas",
+      "email": "fdf",
+      "pwd": "erfeara",
+      "mobile": "aewrerew",
+      "id": 3
+    },
+    {
+      "fName": "dffsdf",
+      "lName": "frfrerer",
+      "email": "rererer",
+      "pwd": "referete",
+      "mobile": "efrerrefretf",
+      "id": 4
     }
   ]
 }

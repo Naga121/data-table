@@ -12,12 +12,16 @@ import { NavbarComponent } from './Components/navbar/navbar.component';
 import { ToastrModule } from 'ngx-toastr';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { LoginComponent } from './Components/login/login.component';
+import { SignupComponent } from './Components/signup/signup.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     EmployeeComponent,
     NavbarComponent,
+    LoginComponent,
+    SignupComponent,
   ],
   imports: [
     BrowserModule,
