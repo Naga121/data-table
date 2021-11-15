@@ -5,19 +5,22 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AngmaterialModule } from './angmaterial/angmaterial.module';
 import { EmployeeComponent } from './Components/employee/employee.component';
 import { NavbarComponent } from './Components/navbar/navbar.component';
 import { ToastrModule } from 'ngx-toastr';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { HeadersInterceptor } from './Interceptors/headers.interceptor'
+import { LoggingInterceptor } from './Interceptors/logging.interceptor';
 
 @NgModule({
   declarations: [
     AppComponent,
     EmployeeComponent,
     NavbarComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -32,7 +35,11 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     Ng2SearchPipeModule
     
   ],
-  providers: [],
+  providers: [
+    {provide:HTTP_INTERCEPTORS,useClass:HeadersInterceptor,multi:true},
+    {provide:HTTP_INTERCEPTORS,useClass:LoggingInterceptor,multi:true}
+
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule { }
