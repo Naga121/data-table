@@ -14,6 +14,7 @@ export class LoginComponent implements OnInit {
 
   form: FormGroup;
   employee: Employee;
+  msgError: string;
 
   constructor(private fb: FormBuilder, private toastr: ToastrService, private http: HttpClient, private router: Router) { }
 
@@ -34,7 +35,7 @@ export class LoginComponent implements OnInit {
         this.form.reset();
         this.router.navigate(['home']);
       } else {
-        this.toastr.error('Login Fail', 'error');
+        this.msgError = `Email & Password is incorrect`;
       }
     }, err => {
       console.log(err);

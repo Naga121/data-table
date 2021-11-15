@@ -3,51 +3,62 @@
         <div class="col">
             <div class="card">
                 <div class="text-center">
+                    <mat-icon class="icon text-light">account_circle</mat-icon>
                     <p class="h5">Sign Up</p>
                     <p class="h6">Register Yourself!</p>
                 </div>
-
-                <form class="normall-form" [formGroup]="form" (ngSubmit)="signUp()">
+                <form class="normall-form" [formGroup]="form" >
                     <div class="row">
                         <div class="col-sm-6">
-                            <label for="Name" class="form-label h6">Firts Name </label> <span
-                                class="text-danger mx-2">*</span>
-                            <input type="text" class="form-control" placeholder="Your FirstName"
-                                formControlName="fName">
+                            <input type="text" class="form-control" placeholder="FirstName" formControlName="fName">
+                            <span class="text-danger h6"
+                                *ngIf="form.controls['fName'].dirty && form.hasError('required','fName')">FirstName is
+                                required
+                            </span>
                         </div>
                         <div class="col-sm-6">
-                            <label for="Name" class="form-label h6">Last Name</label> <span
-                                class="text-danger mx-2">*</span>
-                            <input type="text" class="form-control" placeholder="Your LastName" formControlName="lName">
+                            <input type="text" class="form-control" placeholder="LastName" formControlName="lName">
+                            <span class="text-danger h6"
+                                *ngIf="form.controls['lNama'].dirty && form.hasError('required','lName')">LastName is
+                                required
+                            </span>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-sm-6">
-                            <label for="Email" class="form-label h6">Email</label> <span
-                                class="text-danger mx-2">*</span>
-                            <input type="email" class="form-control" placeholder="abc...@gmaill.com"
-                                formControlName="email">
+                            <input type="email" class="form-control" placeholder="Email" formControlName="email">
+                            <span class="text-danger h6"
+                                *ngIf="form.controls['email'].dirty && form.hasError('required','email')">*Email is
+                                required
+                            </span>
                         </div>
                         <div class="col-sm-6">
-                            <label for="Password" class="form-label h6">Password</label> <span
-                                class="text-danger mx-2">*</span>
-                            <input type="password" class="form-control" placeholder="Enter Your Password"
-                                formControlName="pwd">
+                            <input type="password" class="form-control" placeholder="Password" formControlName="pwd">
+                            <span class="text-danger h6"
+                                *ngIf="form.controls['pwd'].dirty && form.hasError('required','pwd')">*Password is
+                                required
+                            </span>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col">
-                            <label for="mobile" class="form-label h6">Mobile</label> <span
-                                class="text-danger mx-2">*</span>
                             <input type="text" class="form-control" placeholder="Your Number" formControlName="mobile">
+                            <span class="text-danger h6"
+                                *ngIf="form.controls['mobile'].dirty && form.hasError('required','mobile')">*Number is
+                                required
+                            </span>
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-primary mt-3 mb-2">Sign Up</button>
-
-
+                    <div class="row">
+                        <div class="col-md-4">
+                            <button type="submit" [disabled]="!form.valid" class="btn btn-primary mt-3 mb-2"  (click)="signUp()">Sign Up</button>
+                        </div>
+                        <div class="col-md-8 mt-4">
+                            <h4 class="text-light text-end">Already register?<a class="text-danger text-bold h6"
+                                    routerLink="/login">click to Login</a></h4>
+                        </div>
+                    </div>
                 </form>
-                <a class="text-light" routerLink="/login">Already register? click to Login</a>
-
             </div>
         </div>
     </div>

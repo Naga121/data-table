@@ -1,17 +1,30 @@
 .card{
     border: none;
-    width: 500px;
+    width: 450px;
     padding:40px;
-    position: absolute; 
-    top: -50px;
+    position: relative; 
+    top: -100px;
     left: 50%;
     transform: translate(-50%,50%);
     background: rgb(63, 93, 128);
-    background:linear-gradient(90deg,hsla(205,46%,30%,1)0%,rgb(133, 91, 161)100%) ;
+    background:linear-gradient(90deg,rgb(92, 104, 173)0%,rgb(114, 202, 183)100%) ;
+    border-radius: 30px;
 }
 .card p{
     color: white;
 }
 label{
+    color: white;
+}
+
+.form-control{
+    outline: none;
+    border: none;
+    border-style: none;
+    border-bottom: 2px solid black;
+    background: transparent;
+    color: white;
+}
+::placeholder{
     color: white;
 }
