@@ -20,7 +20,6 @@ import { LoggingInterceptor } from './Interceptors/logging.interceptor';
     AppComponent,
     EmployeeComponent,
     NavbarComponent,
-
   ],
   imports: [
     BrowserModule,

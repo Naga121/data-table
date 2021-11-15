@@ -1,0 +1,54 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <div class="text-center">
+                    <p class="h5">Sign Up</p>
+                    <p class="h6">Register Yourself!</p>
+                </div>
+
+                <form class="normall-form" [formGroup]="form" (ngSubmit)="signUp()">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <label for="Name" class="form-label h6">Firts Name </label> <span
+                                class="text-danger mx-2">*</span>
+                            <input type="text" class="form-control" placeholder="Your FirstName"
+                                formControlName="fName">
+                        </div>
+                        <div class="col-sm-6">
+                            <label for="Name" class="form-label h6">Last Name</label> <span
+                                class="text-danger mx-2">*</span>
+                            <input type="text" class="form-control" placeholder="Your LastName" formControlName="lName">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <label for="Email" class="form-label h6">Email</label> <span
+                                class="text-danger mx-2">*</span>
+                            <input type="email" class="form-control" placeholder="abc...@gmaill.com"
+                                formControlName="email">
+                        </div>
+                        <div class="col-sm-6">
+                            <label for="Password" class="form-label h6">Password</label> <span
+                                class="text-danger mx-2">*</span>
+                            <input type="password" class="form-control" placeholder="Enter Your Password"
+                                formControlName="pwd">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label for="mobile" class="form-label h6">Mobile</label> <span
+                                class="text-danger mx-2">*</span>
+                            <input type="text" class="form-control" placeholder="Your Number" formControlName="mobile">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary mt-3 mb-2">Sign Up</button>
+
+
+                </form>
+                <a class="text-light" routerLink="/login">Already register? click to Login</a>
+
+            </div>
+        </div>
+    </div>
+</div>
