@@ -7,46 +7,47 @@
                     <p class="h5">Sign Up</p>
                     <p class="h6">Register Yourself!</p>
                 </div>
+               
                 <form class="normall-form" [formGroup]="form" >
                     <div class="row">
                         <div class="col-sm-6">
                             <input type="text" class="form-control" placeholder="FirstName" formControlName="fName">
-                            <span class="text-danger h6"
+                            <!-- <span class="text-danger h6"
                                 *ngIf="form.controls['fName'].dirty && form.hasError('required','fName')">FirstName is
                                 required
-                            </span>
+                            </span> -->
                         </div>
                         <div class="col-sm-6">
                             <input type="text" class="form-control" placeholder="LastName" formControlName="lName">
-                            <span class="text-danger h6"
+                            <!-- <span class="text-danger h6"
                                 *ngIf="form.controls['lNama'].dirty && form.hasError('required','lName')">LastName is
                                 required
-                            </span>
+                            </span> -->
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-sm-6">
                             <input type="email" class="form-control" placeholder="Email" formControlName="email">
-                            <span class="text-danger h6"
+                            <!-- <span class="text-danger h6"
                                 *ngIf="form.controls['email'].dirty && form.hasError('required','email')">*Email is
                                 required
-                            </span>
+                            </span> -->
                         </div>
                         <div class="col-sm-6">
                             <input type="password" class="form-control" placeholder="Password" formControlName="pwd">
-                            <span class="text-danger h6"
+                            <!-- <span class="text-danger h6"
                                 *ngIf="form.controls['pwd'].dirty && form.hasError('required','pwd')">*Password is
                                 required
-                            </span>
+                            </span> -->
                         </div>
                     </div>
                     <div class="row">
                         <div class="col">
                             <input type="text" class="form-control" placeholder="Your Number" formControlName="mobile">
-                            <span class="text-danger h6"
+                            <!-- <span class="text-danger h6"
                                 *ngIf="form.controls['mobile'].dirty && form.hasError('required','mobile')">*Number is
                                 required
-                            </span>
+                            </span> -->
                         </div>
                     </div>
                     <div class="row">

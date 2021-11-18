@@ -1,4 +1,3 @@
-
 <div class="container">
     <div class="row text-center">
         <div class="col-md-6">
@@ -7,23 +6,28 @@
                     <mat-icon class="icon text-light">account_circle</mat-icon>
                     <p class="h4">LogIn</p>
                     <p class="h6">Please enter Email & Password !</p>
-                    <p   class="text-danger h6">{{msgError}}</p>
+                    <p class="text-danger h6">{{msgError}}</p>
                 </div>
-                <form [formGroup]="form" (ngSubmit)="login()">
-                    
+                <form [formGroup]="loginForm" (ngSubmit)="login()">
+
                     <div class="mb-3">
                         <input type="email" class="form-control" placeholder="Email" formControlName="email">
-                        <span class="text-danger h6" *ngIf="form.controls['email'].dirty && form.hasError('required','email')">Email is required</span>
+                        <span class="text-danger h6"
+                            *ngIf="loginForm.controls['email'].dirty && loginForm.hasError('required','email')">Email is
+                            required</span>
                     </div>
                     <div class="mb-3">
                         <input type="password" class="form-control" placeholder="Password" formControlName="pwd">
-                        <span class="text-danger h6" *ngIf="form.controls['pwd'].dirty && form.hasError('required','pwd')">Password is required</span>
+                        <span class="text-danger h6"
+                            *ngIf="loginForm.controls['pwd'].dirty && loginForm.hasError('required','pwd')">Password is
+                            required</span>
                     </div>
-                        <button type="submit" class="btn btn-primary btn-control mb-2" [disabled]="!form.valid">Login</button>
-                        <h4 class="text-light text-end">New User? <a class="text-danger text-bold h6" routerLink="/signup" > click to SignUp</a></h4>
+                    <button type="submit" class="btn btn-primary btn-control mb-2"
+                        [disabled]="!loginForm.valid">Login</button>
+                    <h4 class="text-light text-end">New User? <a class="text-danger text-bold h6" routerLink="/signup">
+                            click to SignUp</a></h4>
                 </form>
             </div>
         </div>
     </div>
 </div>
-

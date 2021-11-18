@@ -29,9 +29,11 @@
     font-size: 15px;
 }
 .container1{
-    background: white url("../../../assets/baner1.png")  no-repeat center ;
+    background: white url("../../../assets/baner1.png")  no-repeat center;
     background-size: cover;
-    height: 50vh;
+    
+    width: 100%;
+    height:50vh;
     color: white;
 }
 .container-wrapper{
@@ -48,7 +50,7 @@
 }
 
 /* ---- media Queries ---- */
-@media (max-width: 768px){
+@media (max-width: 500px){
     .main_nav{
         flex-direction: column;
     }

@@ -7,7 +7,7 @@
       "gender": "Female",
       "role": "Testing",
       "skill": "Selenium",
-      "expYear": "1.5",
+      "expYear": "2",
       "id": 2
     },
     {
@@ -49,48 +49,50 @@
       "skill": "Angular,React",
       "expYear": "1.0",
       "id": 6
+    },
+    {
+      "eName": "Naga",
+      "email": "Naga@gmail.com",
+      "mobile": "7894561230",
+      "gender": "male",
+      "role": "dev",
+      "skill": "angular",
+      "expYear": "1.2",
+      "id": 7
     }
   ],
   "Signup": [
     {
-      "fName": "thhr",
-      "lName": "dfsdfas",
-      "email": "sdfsafa",
-      "pwd": "fdfdfr",
-      "mobile": "efeerer",
+      "fName": "Naga",
+      "lName": "Thota",
+      "email": "naga@gmail.com",
+      "pwd": "naga@123",
+      "mobile": "9087654321",
       "id": 1
     },
     {
-      "fName": "dsdsd",
-      "lName": "fffdd",
-      "email": "dfsfs",
-      "pwd": "esfsrf",
-      "mobile": "efrererewrw",
-      "id": 2
-    },
-    {
-      "fName": "dfd",
-      "lName": "dfdfas",
-      "email": "fdf",
-      "pwd": "erfeara",
-      "mobile": "aewrerew",
-      "id": 3
-    },
-    {
-      "fName": "dffsdf",
-      "lName": "frfrerer",
-      "email": "rererer",
-      "pwd": "referete",
-      "mobile": "efrerrefretf",
-      "id": 4
-    },
-    {
-      "fName": "",
-      "lName": "",
+      "fName": "fdfd",
+      "lName": "zsdff",
       "email": "",
       "pwd": "",
       "mobile": "",
-      "id": 5
+      "id": 2
+    },
+    {
+      "fName": "fdsfr",
+      "lName": "esrerer",
+      "email": "eewrewrew",
+      "pwd": "esesrwear",
+      "mobile": "ewrwerer",
+      "id": 3
+    },
+    {
+      "fName": "thota",
+      "lName": "naga",
+      "email": "naga@gmail.con",
+      "pwd": "naga@123",
+      "mobile": "9087654321",
+      "id": 4
     }
   ]
 }

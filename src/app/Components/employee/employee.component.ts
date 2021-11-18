@@ -11,20 +11,20 @@ import { EmployeeService } from 'src/app/Service/employee.service';
 })
 export class EmployeeComponent implements OnInit {
 
-  public form: FormGroup;
-  public employee: Employee[] = [];
-  public submitted: boolean = false;
-  public postDataButtion: boolean;
-  public upDateButtion: boolean;
-  public search: string;
-  public p: number = 1;
-  public employeeId: any;
+  form: FormGroup;
+  employee: Employee[] = [];
+  submitted: boolean ;
+  postDataButtion: boolean;
+  upDateButtion: boolean;
+  search: string;
+  p: number = 1;
+  employeeId: any;
 
   constructor(public es: EmployeeService, private fb: FormBuilder, private toastr: ToastrService) { }
 
-  get formControl() {
-    return this.form.controls;
-  }
+  // get formControl() {
+  //   return this.form.controls;
+  // }
   
   clickEmployee() {
     this.form.reset();
@@ -45,19 +45,24 @@ export class EmployeeComponent implements OnInit {
     this.getEmpData();
   }
 
-  postEmpData() {
-    this.submitted = true;
-    this.employee = this.form.value;
-    this.es.postData(this.employee).subscribe(
-      () => {
-        this.form.reset();
-        this.getEmpData();
-        this.toastr.success('Your data is saved', 'done');
-      }, err => {
-        this.toastr.error("your data is Error", 'plese check');
-        console.log(err);
-      }
-    );
+  postEmpData(value:any) {
+    // this.ngOnInit()
+        console.log("hedkjesr",value);
+
+    // this.employee =;
+    
+    // this.es.postData( this.form.value).subscribe(
+      
+    //   (res) => {
+    //     console.log(res);
+        // this.form.reset();
+        // this.getEmpData();
+    //     this.toastr.success('Your data is saved', 'done');
+    //   }, err => {
+    //     this.toastr.error("your data is Error", 'plese check');
+    //     console.log(err);
+    //   }
+    // );
   }
 
   getEmpData() {

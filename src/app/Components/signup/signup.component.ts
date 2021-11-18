@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Employee } from 'src/app/Models/employee.model';
+import { EmployeeService } from 'src/app/Service/employee.service';
 
 @Component({
   selector: 'app-signup',
@@ -14,7 +15,7 @@ export class SignupComponent implements OnInit {
 
   form: FormGroup;
   employee: Employee[] = [];
-  constructor(private fb: FormBuilder, private toastr: ToastrService, private http: HttpClient, private router: Router) { }
+  constructor(private fb: FormBuilder, private toastr: ToastrService, private es:EmployeeService, private router: Router) { }
 
   ngOnInit(): void {
     this.form = this.fb.group({
@@ -27,12 +28,12 @@ export class SignupComponent implements OnInit {
   }
 
   signUp() {
-    this.http.post<Employee[]>("http://localhost:3000/Signup", this.form.value).subscribe((res: Employee[]) => {
+    this.es.postSignup(this.form.value).subscribe((res:Employee[])=>{
       console.log(res);
       this.form.reset();
-      this.toastr.success('Registation  Complite', 'Succress');
       this.router.navigate(['login']);
-    });
+      this.toastr.success('Register success','SignUP')
+    })
   }
 
 }
