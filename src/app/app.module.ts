@@ -14,12 +14,16 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { HeadersInterceptor } from './Interceptors/headers.interceptor'
 import { LoggingInterceptor } from './Interceptors/logging.interceptor';
+import { LoginComponent } from './Components/login/login.component';
+import { SignupComponent } from './Components/signup/signup.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     EmployeeComponent,
     NavbarComponent,
+    LoginComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +35,8 @@ import { LoggingInterceptor } from './Interceptors/logging.interceptor';
     AngmaterialModule,
     ToastrModule.forRoot(),
     NgxPaginationModule,
-    Ng2SearchPipeModule
+    Ng2SearchPipeModule,
+     
     
   ],
   providers: [
