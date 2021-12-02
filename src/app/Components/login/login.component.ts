@@ -32,25 +32,19 @@ export class LoginComponent implements OnInit {
     let email = this.loginForm.value.email;
     let pwd = this.loginForm.value.pwd;
     if (email != "" && pwd !="") {
-      this.es.getLogin().subscribe((res: Employee[]) => {
-        console.log("success",res);
-        this.router.navigate(['home'])
+      this.es.getLogin(email).subscribe((res: Employee[]) => {
+        if(res.length !=0){
+          if(pwd==res[0].pwd){
+          this.router.navigate(['home']);
+          this.toastr.success('login Success','Login')
+          }else
+          alert("error")
+        }else{
+          alert('please Signin')
+        }
       })
     }
-    //  this.http.get<Employee[]>("http://localhost:3000/Signup").subscribe((res: Employee[]) => {
-    //    const emp = res.find((id: Employee) => {
-    //      return id.email === this.loginForm.value.email && id.pwd === this.loginForm.value.pwd;
-    //    });
-    //    if (emp) {
-    //      this.toastr.success('Login Success', 'Success');
-    //      this.loginForm.reset();
-    //      this.router.navigate(['home']);
-    //    } else {
-    //      this.msgError = `Email & Password is incorrect`;
-    //    }
-    //  }, err => {
-    //    console.log(err);
-    //  })
+
   }
 
 

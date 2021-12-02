@@ -6,7 +6,7 @@
                     <mat-icon class="icon text-light">account_circle</mat-icon>
                     <p class="h4">LogIn</p>
                     <p class="h6">Please enter Email & Password !</p>
-                    <p class="text-danger h6">{{msgError}}</p>
+                    <h6 class="text-danger">{{msgError}}</h6>
                 </div>
                 <form [formGroup]="loginForm" (ngSubmit)="login()">
 

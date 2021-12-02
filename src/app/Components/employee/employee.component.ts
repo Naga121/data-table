@@ -45,9 +45,9 @@ export class EmployeeComponent implements OnInit {
     this.getEmpData();
   }
 
-  postEmpData(value:any) {
+  postEmpData() {
     // this.ngOnInit()
-        console.log("hedkjesr",value);
+        console.log("hedkjesr",this.form.value);
 
     // this.employee =;
     

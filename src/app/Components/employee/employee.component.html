@@ -5,7 +5,7 @@
             <p class="modal-title text-center text-danger h4 mt-3" id="exampleModalLabel">Employee Form</p>
             <!-- <button type="button" class="btn-close d-flex" data-bs-dismiss="modal" aria-label="Close"></button> -->
             <div class="modal-body">
-                <form class="normall-form" [formGroup]="form"(ngSubmit)="postEmpData(form.value)" >
+                <form class="normall-form" [formGroup]="form"  >
                     <div class="row">
                         <div class="col-sm-6">
                             <label for="Name" class="form-label h6">Name </label> <span
@@ -66,7 +66,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-pale-red mx-2" data-bs-dismiss="modal" id="cancle">Close</button>
-                <button type="submit" class="btn btn-primary mx-2" *ngIf="postDataButtion" data-bs-dismiss="modal">PostData</button>
+                <button type="button" class="btn btn-primary mx-2" *ngIf="postDataButtion" (click)="postEmpData()" data-bs-dismiss="modal">PostData</button>
                 <button type="submit" class="btn btn-primary mx-2" (click)="upDateEmp()" *ngIf="upDateButtion" data-bs-dismiss="modal">UpDate</button>
             </div>
         </div>
